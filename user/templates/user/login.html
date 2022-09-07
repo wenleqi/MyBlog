@@ -1,0 +1,37 @@
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+    <section>
+        <div class="container d-flex flex-column">
+            <div class="row align-items-center justify-content-center min-vh-100">
+                <div class="col-md-6 col-lg-5 col-xl-5 py-6 py-md-0">
+                    <div class="card shadow zindex-100 mb-0">
+                        <div class="card-body px-md-5 py-5">
+                            <div class="mb-5">
+                                <h6 class="h3">登陆</h6>
+                                <p class="text-muted mb-0">登陆你的账号</p>
+                            </div>
+                            <span class="clearfix"></span>
+                            <form action="" method="post">
+                                {% bootstrap_form form %}
+                                {% csrf_token %}
+                                <div class="mt-4">
+                                    <button type="submit" class="btn btn-block btn-primary">登陆</button></div>
+                            </form>
+                        </div>
+                        <div class="card-footer px-md-5"><small></small>
+                            <a href="{% url 'user:register' %}" class="small font-weight-bold">创建账户</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

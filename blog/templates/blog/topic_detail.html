@@ -1,0 +1,29 @@
+{% extends 'blog/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% block content %}
+    <li><a>{{ topic.title }}</a></li>
+    <li>{{ topic.user.username }}</li>
+    <li>{{ topic.created_time }}</li>
+    <li>{{ topic.content }}</li>
+    <hr>
+    <ul>
+        {% for comment in comments %}
+            <li>{{ comment.user.username }}</li>
+            <li>{{ comment.comment }}</li>
+            <li>{{ comment.up }}</li>
+            <li>{{ comment.down }}</li>
+            <hr>
+        {% empty %}
+            <li>暂无评论</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+</body>
+</html>

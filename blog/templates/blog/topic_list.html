@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% block content %}
+    <ul>
+    {% for topic in topic_list %}
+        <li><a>{{ topic.title }}</a></li>
+        <li>{{ topic.user.username }}</li>
+        <li>{{ topic.created_time }}</li>
+        <hr>
+    {% empty %}
+        <li>无主题展示</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
+</body>
+</html>

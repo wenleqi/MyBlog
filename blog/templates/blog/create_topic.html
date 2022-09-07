@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+
+{% block content %}
+    <form action="" method="post" class="form">
+        <table>
+            {% bootstrap_form form %}
+            {% csrf_token %}
+        </table>
+        <input value="提交" type="submit">
+    </form>
+{% endblock %}
+</body>
+</html>
